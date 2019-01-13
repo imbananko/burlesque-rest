@@ -8,10 +8,10 @@ The Burlesque is a REST API application built with [Spark](http://sparkjava.com/
 ## Getting started
 By default the application runs on :4567 port. 
 
-###Base REST API URL: 
+### Base REST API URL: 
 {server-adress}:4567/burlesque/api/. For that moment only GET and POST request are avialable.
 
-###CRUD resources list:
+### CRUD resources list:
 
 • GET /accounts/{id}
 • GET /transactions/{transaction_id}
@@ -21,7 +21,7 @@ By default the application runs on :4567 port.
 • POST /accounts/create (id, amount - as parameters)
 • POST /transfer/ (from, to, amount - as parameters)
 
-###Examples:
+### Examples:
 
 ```
 curl -X POST imbananko.com:4567/burlesque/api/accounts -d 'id=1&amount=400.12 - creates account with specified id and balance
