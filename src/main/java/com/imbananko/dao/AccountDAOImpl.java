@@ -86,7 +86,7 @@ public class AccountDAOImpl extends EmbeddedH2Provider implements AccountDAO {
                 }
             }
         } catch (SQLException e) {
-            log.error("Error getting all accounts. Exception: {}", e);
+            log.error("Error getting all accounts. Exception=", e);
         }
         return accountsToReturn;
     }

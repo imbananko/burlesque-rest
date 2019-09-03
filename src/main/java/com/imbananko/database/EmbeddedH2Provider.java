@@ -7,11 +7,13 @@ import java.sql.*;
 
 public abstract class EmbeddedH2Provider<E> {
 
+    //move this to sql file
     protected static final String URL = "jdbc:h2:mem:burlesque;DB_CLOSE_DELAY=-1";
     private final static Logger log = LoggerFactory.getLogger(EmbeddedH2Provider.class);
 
     protected EmbeddedH2Provider() {
         try (Connection connection = DriverManager.getConnection(URL)) {
+            //move this to sql file
             getCreateTableSQLStatement(connection).execute();
         } catch (SQLException e) {
             log.error("Error starting in-memory H2: " + e);

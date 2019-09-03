@@ -17,7 +17,7 @@ public class BurlesqueREST {
 
     @Inject
     public BurlesqueREST() {
-        log.info("Starting main service at port={}", PORT);
+        log.info("Starting main service at port=" + PORT);
         port(PORT);
 
         before(Path.BASE_WILDCARD_PATH, (request, response) -> log.info("Received api call: " + request.pathInfo()));

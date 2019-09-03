@@ -18,6 +18,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class TransferService {
 
+    //Separate business logic from database logic: another controller class for routing and another service class for business logic
+
     private final static Logger log = LoggerFactory.getLogger(TransferService.class);
     private static Lock lock = new ReentrantLock();
 
@@ -55,6 +57,9 @@ public class TransferService {
         Transaction transaction;
 
         lock.lock();
+
+        //lock first then second id
+        //concurrent hashmap: key - id, value - amount
 
         try {
             Account accountToWithdraw = accountDAO.get(tradingAccountID);
